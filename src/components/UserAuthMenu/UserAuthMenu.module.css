@@ -1,0 +1,14 @@
+.authWrap {
+  display: flex;
+  justify-content: end;
+  gap: 15px;
+  margin-right: 20px;
+}
+
+.authPar {
+  margin: 5px;
+}
+
+.authBtn {
+  padding: 5px;
+}

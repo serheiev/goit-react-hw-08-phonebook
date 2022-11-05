@@ -8,7 +8,7 @@ import { selectedContacts } from 'redux/contacts/contacts-selectors';
 
 export const Form = () => {
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [number, setNumber] = useState('');
   const contacts = useSelector(selectedContacts);
   const dispatch = useDispatch();
 
@@ -19,7 +19,7 @@ export const Form = () => {
         setName(value);
         break;
       case 'number':
-        setPhone(value);
+        setNumber(value);
         break;
       default:
         break;
@@ -33,9 +33,9 @@ export const Form = () => {
       return alert(`${name} is already in contacts`);
     }
 
-    dispatch(addContact({ id: nanoid(), name, phone }));
+    dispatch(addContact({ id: nanoid(), name, number }));
     setName('');
-    setPhone('');
+    setNumber('');
   };
 
   return (
@@ -57,7 +57,7 @@ export const Form = () => {
         <span>Number</span>
         <Input
           name="number"
-          value={phone}
+          value={number}
           type={'tel'}
           placeholder={'contact number'}
           onChange={inputChange}
