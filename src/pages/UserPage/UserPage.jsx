@@ -3,17 +3,35 @@ import { Form } from '../../components/Form/Form';
 import { Contacts } from '../../components/Contact/Contact';
 import { ContactsFilter } from '../../components/Filter/Filter';
 import { Loader } from '../../components/Loader/Loader';
+import { useState } from 'react';
+// import Button from '@mui/material/Button';
+import { Btn } from './UserPage.styled';
 
 export const UserPage = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleClick = e => {
+    e.preventDefault();
+    setIsVisible(!isVisible);
+  };
+
   return (
     <>
-      <Section title="Phonebook">
-        <Form />
-      </Section>
+      {/* <Section title="Create contact">
+        <Btn variant="contained" size="small" onClick={handleClick}>
+          add contact
+        </Btn>
+        {isVisible && <Form />}
+         <Form />
+      </Section> */}
 
       <Section title="Contacts">
-        <ContactsFilter />
+        <Btn variant="contained" size="small" onClick={handleClick}>
+          add contact
+        </Btn>
+        {isVisible && <Form />}
         <Loader />
+        <ContactsFilter />
         <Contacts />
       </Section>
     </>

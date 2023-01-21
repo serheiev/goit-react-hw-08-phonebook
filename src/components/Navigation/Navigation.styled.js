@@ -5,7 +5,6 @@ export const Link = styled(NavLink)`
   text-decoration: none;
   font-size: 28px;
   font-weight: 600;
-
   &.active {
     color: tomato;
   }
@@ -13,6 +12,7 @@ export const Link = styled(NavLink)`
 
 export const NavMenuList = styled.ul`
   display: flex;
+  padding: 0;
 `;
 export const NavMenuItem = styled.li`
   list-style: none;

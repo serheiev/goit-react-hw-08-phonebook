@@ -21,8 +21,8 @@ export const LoginForm = () => {
     }
   };
 
-  const handleSubmit = event => {
-    event.preventDefault();
+  const handleSubmit = e => {
+    e.preventDefault();
     dispatch(login({ email, password }));
     setEmail('');
     setPassword('');

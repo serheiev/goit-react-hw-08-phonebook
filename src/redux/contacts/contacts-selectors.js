@@ -9,6 +9,3 @@ export const selectVisibleContacts = createSelector(
       name.toLocaleLowerCase().includes(filter.toLocaleLowerCase())
     )
 );
-
-// export const selectedContacts = state => state.contacts.contacts;
-// export const selectIsLoading = state => state.contacts.isLoading;

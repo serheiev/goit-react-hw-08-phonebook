@@ -1,20 +1,7 @@
-// import { configureStore } from '@reduxjs/toolkit';
-// import { contactsReducer } from './contacts/contacts-slice';
-// import { filterReducer } from './filter/filter-slice';
-
-// export const store = configureStore({
-//   reducer: {
-//     contacts: contactsReducer,
-//     filter: filterReducer,
-//   },
-// });
-
-// import usersReducer from "./users/usersSlice";
 import authReducer from './auth/auth-slice';
 import { contactsReducer } from './contacts/contacts-slice';
 import { filterReducer } from './filter/filter-slice';
 import { configureStore } from '@reduxjs/toolkit';
-// import storage from 'redux-persist/lib/storage';
 
 import {
   persistStore,
