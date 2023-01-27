@@ -10,7 +10,6 @@ import { useEffect } from 'react';
 export const Contacts = () => {
   const contacts = useSelector(selectVisibleContacts);
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
@@ -18,15 +17,21 @@ export const Contacts = () => {
   return (
     <>
       <ul>
-        {contacts.map(contact => (
-          <ContactsItem
-            name={contact.name}
-            number={contact.number}
-            id={contact.id}
-            key={contact.id}
-            onDelete={() => dispatch(deleteContact(contact.id))}
-          />
-        ))}
+        {contacts
+          .sort((a, b) => {
+            if (a.name > b.name) return 1;
+            if (a.name < b.name) return -1;
+            return 0;
+          })
+          .map(contact => (
+            <ContactsItem
+              name={contact.name}
+              number={contact.number}
+              id={contact.id}
+              key={contact.id}
+              onDelete={() => dispatch(deleteContact(contact.id))}
+            />
+          ))}
       </ul>
     </>
   );

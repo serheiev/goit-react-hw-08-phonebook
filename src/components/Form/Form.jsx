@@ -6,7 +6,6 @@ import { addContact } from 'redux/contacts/contacts-operations';
 import { selectedContacts } from 'redux/contacts/contacts-selectors';
 import { CreateForm } from './Form.styled';
 import { Input } from 'components/Input/Input';
-// import TextField from '@mui/material/TextField';
 
 export const Form = () => {
   const [name, setName] = useState('');
@@ -43,7 +42,6 @@ export const Form = () => {
   return (
     <CreateForm onSubmit={handleSubmit}>
       <label>
-        {/* <span>Name</span> */}
         <Input
           required
           id="outlined-required"
@@ -54,19 +52,9 @@ export const Form = () => {
           type="text"
           onChange={inputChange}
         />
-        {/* <Input
-          name="name"
-          value={name}
-          type={'text'}
-          placeholder={'contact name'}
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-          onChange={inputChange}
-        /> */}
       </label>
 
       <label>
-        {/* <span>Number</span> */}
         <Input
           required
           id="outlined-required"
@@ -77,15 +65,6 @@ export const Form = () => {
           type="number"
           onChange={inputChange}
         />
-        {/* <Input
-          name="number"
-          value={number}
-          type={'tel'}
-          placeholder={'contact number'}
-          onChange={inputChange}
-          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-        /> */}
       </label>
       <ButtonCreate type="submit" text="Create contact" />
     </CreateForm>

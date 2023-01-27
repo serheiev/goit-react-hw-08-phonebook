@@ -15,12 +15,9 @@ export const ContactsFilter = () => {
       variant="standard"
       label="Search by name"
       size="small"
-      placeholder=""
       type="text"
       onChange={handleInput}
-      title=""
       name="search"
-      pattern=""
     />
   );
 };
