@@ -1,34 +1,37 @@
 import PropTypes from 'prop-types';
+import TextField from '@mui/material/TextField';
 
 export const Input = ({
+  id,
+  label,
+  size,
   type,
   title,
-  placeholder,
   onChange,
   name,
   pattern,
   value,
 }) => {
   return (
-    <input
+    <TextField
+      id={id}
+      label={label}
+      size={size}
       onChange={onChange}
       value={value}
       type={type}
-      placeholder={placeholder}
       name={name}
-      pattern={pattern}
-      title={title}
       required
     />
   );
 };
 
 Input.propTypes = {
+  id: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  size: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
-  pattern: PropTypes.string.isRequired,
   value: PropTypes.string,
 };

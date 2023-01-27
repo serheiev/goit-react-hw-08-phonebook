@@ -1,14 +1,15 @@
 import PropTypes from 'prop-types';
+import Button from '@mui/material/Button';
 
-export const Button = ({ text, type, onDelete }) => {
+export const ButtonCreate = ({ text, type, onDelete }) => {
   return (
-    <button type={type} onClick={onDelete}>
+    <Button variant="contained" size="small" type={type} onClick={onDelete}>
       {text}
-    </button>
+    </Button>
   );
 };
 
-Button.propTypes = {
+ButtonCreate.propTypes = {
   text: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   onDelete: PropTypes.func,

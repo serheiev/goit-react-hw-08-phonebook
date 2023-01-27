@@ -4,7 +4,6 @@ import { Contacts } from '../../components/Contact/Contact';
 import { ContactsFilter } from '../../components/Filter/Filter';
 import { Loader } from '../../components/Loader/Loader';
 import { useState } from 'react';
-// import Button from '@mui/material/Button';
 import { Btn } from './UserPage.styled';
 
 export const UserPage = () => {
@@ -27,7 +26,7 @@ export const UserPage = () => {
 
       <Section title="Contacts">
         <Btn variant="contained" size="small" onClick={handleClick}>
-          add contact
+          {isVisible ? 'close' : 'add contact'}
         </Btn>
         {isVisible && <Form />}
         <Loader />

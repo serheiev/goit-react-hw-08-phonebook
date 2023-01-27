@@ -1,4 +1,3 @@
-// import styled from 'styled-components';
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 
@@ -6,7 +5,6 @@ export const Btn = styled(Button)`
   font-size: 16;
   width: 120px;
   padding: 2px 4px;
-  margin: 10px;
   border: 1px solid;
   line-height: 1.5;
   background-color: #2d14cc;

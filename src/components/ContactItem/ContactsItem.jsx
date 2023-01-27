@@ -1,4 +1,5 @@
-import { Button } from 'components/Button/Button';
+// import { Button } from 'components/Button/Button';
+import { DeleteButton } from 'components/DeleteButton/DeleteButton';
 import PropTypes from 'prop-types';
 import Avatar from '@mui/material/Avatar';
 import { ContItem, NameWrap } from './ContactsItem.styled';
@@ -22,11 +23,11 @@ export const ContactsItem = ({ name, number, onDelete, id }) => {
       <NameWrap>
         <Avatar {...stringAvatar(`${name}`)} />
         <div>
-          <span>{name}</span>
+          <p>{name}</p>
           <span>{number}</span>
         </div>
       </NameWrap>
-      <Button type="button" text="Delete" onDelete={onDelete} />
+      <DeleteButton type="button" text="" onDelete={onDelete} />
     </ContItem>
   );
 };

@@ -1,10 +1,12 @@
-import { Button } from 'components/Button/Button';
-import { Input } from 'components/Input/Input';
+import { ButtonCreate } from 'components/Button/Button';
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/contacts-operations';
 import { selectedContacts } from 'redux/contacts/contacts-selectors';
+import { CreateForm } from './Form.styled';
+import { Input } from 'components/Input/Input';
+// import TextField from '@mui/material/TextField';
 
 export const Form = () => {
   const [name, setName] = useState('');
@@ -39,10 +41,20 @@ export const Form = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <CreateForm onSubmit={handleSubmit}>
       <label>
-        <span>Name</span>
+        {/* <span>Name</span> */}
         <Input
+          required
+          id="outlined-required"
+          label="Name"
+          size="small"
+          name="name"
+          value={name}
+          type="text"
+          onChange={inputChange}
+        />
+        {/* <Input
           name="name"
           value={name}
           type={'text'}
@@ -50,12 +62,22 @@ export const Form = () => {
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           onChange={inputChange}
-        />
+        /> */}
       </label>
 
       <label>
-        <span>Number</span>
+        {/* <span>Number</span> */}
         <Input
+          required
+          id="outlined-required"
+          label="Number"
+          size="small"
+          name="number"
+          value={number}
+          type="number"
+          onChange={inputChange}
+        />
+        {/* <Input
           name="number"
           value={number}
           type={'tel'}
@@ -63,9 +85,9 @@ export const Form = () => {
           onChange={inputChange}
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-        />
-        <Button type="submit" text="Create contact" />
+        /> */}
       </label>
-    </form>
+      <ButtonCreate type="submit" text="Create contact" />
+    </CreateForm>
   );
 };

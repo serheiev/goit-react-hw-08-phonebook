@@ -1,7 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { Input } from 'components/Input/Input';
-// import { setFilter } from 'redux/contacts/filter-slice';
 import { changeFilter } from 'redux/filter/filter-slice';
+import TextField from '@mui/material/TextField';
 
 export const ContactsFilter = () => {
   const dispatch = useDispatch();
@@ -11,8 +10,12 @@ export const ContactsFilter = () => {
   };
 
   return (
-    <Input
-      placeholder="name in contacts"
+    <TextField
+      id="standard-search"
+      variant="standard"
+      label="Search by name"
+      size="small"
+      placeholder=""
       type="text"
       onChange={handleInput}
       title=""
