@@ -1,7 +1,9 @@
+import { Input } from 'components/Input/Input';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from '../../redux/auth/auth-operations';
-
+import Button from '@mui/material/Button';
+import { Form } from './RegisterForm.styled';
 export const RegisterForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -34,14 +36,25 @@ export const RegisterForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <label>
-        Name:
-        <input type="text" name="name" value={name} onChange={handleChange} />
+        <Input
+          required
+          id="outlined-required"
+          label="Name"
+          size="small"
+          type="text"
+          name="name"
+          value={name}
+          onChange={handleChange}
+        />
       </label>
       <label>
-        Email:
-        <input
+        <Input
+          required
+          id="outlined-required"
+          label="Email"
+          size="small"
           type="email"
           name="email"
           value={email}
@@ -49,15 +62,20 @@ export const RegisterForm = () => {
         />
       </label>
       <label>
-        Password:
-        <input
+        <Input
+          required
+          id="outlined-required"
+          label="Password"
+          size="small"
           type="password"
           name="password"
           value={password}
           onChange={handleChange}
         />
       </label>
-      <button>Register</button>
-    </form>
+      <Button variant="outlined" color="success" type="submit">
+        Register
+      </Button>
+    </Form>
   );
 };

@@ -34,6 +34,10 @@ export const Form = () => {
       return alert(`${name} is already in contacts`);
     }
 
+    if (number.toString() === true) {
+      return;
+    }
+
     dispatch(addContact({ id: nanoid(), name, number }));
     setName('');
     setNumber('');

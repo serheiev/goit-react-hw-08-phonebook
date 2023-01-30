@@ -1,5 +1,10 @@
 import { LoginForm } from 'components/LoginForm/LoginForm';
+import { Section } from 'components/Section/Section';
 
 export const LoginPage = () => {
-  return <LoginForm />;
+  return (
+    <Section title="">
+      <LoginForm />
+    </Section>
+  );
 };

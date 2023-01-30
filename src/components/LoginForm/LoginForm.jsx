@@ -1,6 +1,9 @@
+import { Input } from 'components/Input/Input';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { login } from '../../redux/auth/auth-operations';
+import Button from '@mui/material/Button';
+import { Form } from './LoginForm.styled';
 
 export const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -29,10 +32,19 @@ export const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <label>
-        Email:
-        <input
+        {/* <input
+          type="email"
+          name="email"
+          value={email}
+          onChange={handleChange}
+        /> */}
+        <Input
+          required
+          id="outlined-required"
+          label="Email"
+          size="small"
           type="email"
           name="email"
           value={email}
@@ -40,15 +52,27 @@ export const LoginForm = () => {
         />
       </label>
       <label>
-        Password:
-        <input
+        {/* <input
+          type="password"
+          name="password"
+          value={password}
+          onChange={handleChange}
+        /> */}
+        <Input
+          required
+          id="outlined-required"
+          label="Password"
+          size="small"
           type="password"
           name="password"
           value={password}
           onChange={handleChange}
         />
       </label>
-      <button>Login</button>
-    </form>
+      {/* <button>Login</button> */}
+      <Button variant="outlined" color="success" type="submit">
+        Login
+      </Button>
+    </Form>
   );
 };

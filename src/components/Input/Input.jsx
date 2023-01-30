@@ -1,17 +1,7 @@
 import PropTypes from 'prop-types';
 import TextField from '@mui/material/TextField';
 
-export const Input = ({
-  id,
-  label,
-  size,
-  type,
-  title,
-  onChange,
-  name,
-  pattern,
-  value,
-}) => {
+export const Input = ({ id, label, size, type, onChange, name, value }) => {
   return (
     <TextField
       id={id}

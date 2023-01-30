@@ -1,14 +1,15 @@
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { AuthNavItem, AuthNavList, AuthLink } from './AuthNavigation.styled';
 
 export const AuthNavigation = () => {
   return (
-    <ul>
-      <li>
-        <Link to="/register">Registaration</Link>
-      </li>
-      <li>
-        <Link to="/login">Login</Link>
-      </li>
-    </ul>
+    <AuthNavList>
+      <AuthNavItem>
+        <AuthLink to="/register">Registaration</AuthLink>
+      </AuthNavItem>
+      <AuthNavItem>
+        <AuthLink to="/login">Login</AuthLink>
+      </AuthNavItem>
+    </AuthNavList>
   );
 };
